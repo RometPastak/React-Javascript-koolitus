@@ -1,0 +1,23 @@
+.main-pilt {
+  width: 300px;
+  height: 150px;
+}
+
+.main-pilt:hover {
+  opacity: 0.8;
+}
+
+.nupp {
+  background-color: blue;
+  border-radius: 7px;
+  width: 200px;
+  height: 300px;
+}
+
+.nupp:hover {
+  font-weight: bold;
+}
+
+.main-pilt, .nupp {
+  cursor: pointer;
+}
