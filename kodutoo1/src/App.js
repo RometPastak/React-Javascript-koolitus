@@ -1,23 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button>Vajuta</button>
+      <p>Sinine tekst</p>
+      <img src="https://auto.geenius.ee/app/uploads/sites/4/2019/03/0390485a452668caa0c10bfeae9aa0b4.jpg" alt="Auto" width="400" height="250" />
     </div>
   );
 }
