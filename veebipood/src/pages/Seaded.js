@@ -3,19 +3,24 @@ import { useRef, useState } from "react";
 function Seaded() {
     const [keel, uuendaKeel] = useState(localStorage.getItem("keel") || "est");
 
-    const muudaKeelEE = () => {
-        uuendaKeel("est");
-        localStorage.setItem("keel", "est");
-    }
+    // const muudaKeelEE = () => {
+    //     uuendaKeel("est");
+    //     localStorage.setItem("keel", "est");
+    // }
 
-    const muudaKeelEN = () => {
-        uuendaKeel("eng");
-        localStorage.setItem("keel", "eng");
-    }
+    // const muudaKeelEN = () => {
+    //     uuendaKeel("eng");
+    //     localStorage.setItem("keel", "eng");
+    // }
 
-    const muudaKeelRU = () => {
-        uuendaKeel("rus");
-        localStorage.setItem("keel", "rus");
+    // const muudaKeelRU = () => {
+    //     uuendaKeel("rus");
+    //     localStorage.setItem("keel", "rus");
+    // }
+
+    const muudaKeel = (uusKeel) => {
+        uuendaKeel(uusKeel);
+        localStorage.setItem("keel", uusKeel)
     }
 
     const epostRef = useRef();
@@ -41,9 +46,9 @@ function Seaded() {
             <br />
 
             <div>--------------------------------------------</div>
-            <button onClick={muudaKeelEE}>EE</button>
-            <button onClick={muudaKeelEN}>EN</button>
-            <button onClick={muudaKeelRU}>RU</button>
+            <button onClick={() => muudaKeel("est")}>EE</button>
+            <button onClick={() => muudaKeel("eng")}>EN</button>
+            <button onClick={() => muudaKeel("rus")}>RU</button>
             { keel === "est" && <div>Vaatad eesti keelset saiti</div> }
             { keel === "eng" && <div>Vaatad inglise keelset saiti</div> }
             { keel === "rus" && <div>Vaatad vene keelset saiti</div> }
