@@ -6,6 +6,10 @@ import LisaToode from './pages/LisaToode';
 import Seaded from './pages/Seaded';
 import Meist from './pages/Meist';
 import Poed from './pages/Poed';
+import Tooted from './pages/Tooted';
+import HaldaTooteid from './pages/HaldaTooteid';
+import MuudaToode from './pages/MuudaToode';
+import YksikToode from './pages/YksikToode';
 
 function App() {
   return (
@@ -28,6 +32,12 @@ function App() {
       <Link to="/poed">
         <button className="nupp">Poed</button>
       </Link>
+      <Link to="/tooted">
+        <button className="nupp">Tooted</button>
+      </Link>
+      <Link to="/halda">
+        <button className="nupp">Halda tooteid</button>
+      </Link>
 
       <Routes>
         <Route path="" element={ <Avaleht /> } />
@@ -36,6 +46,10 @@ function App() {
         <Route path="seaded" element={ <Seaded /> } />
         <Route path="meist" element={ <Meist /> } />
         <Route path="poed" element={ <Poed /> } />
+        <Route path="tooted" element={ <Tooted /> } />
+        <Route path="halda" element={ <HaldaTooteid /> } />
+        <Route path="muuda" element={ <MuudaToode /> } />
+        <Route path="toode/:jrknumber" element={ <YksikToode /> } />
       </Routes>
     </div>
   );

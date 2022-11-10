@@ -14,6 +14,15 @@ function LisaToode() {
         }
         else {
             muudaSonum("Lisasid uue toote " + nimiRef.current.value);
+            const tootedLS = JSON.parse(localStorage.getItem("tooted")) || [];
+            tootedLS.push(nimiRef.current.value);
+            localStorage.setItem("tooted", JSON.stringify(tootedLS));
+
+            // let tooted = localStorage.getItem("tooted");
+            // tooted = JSON.parse(tooted) || [];
+            // tooted.push(nimiRef.current.value);
+            // tooted = JSON.stringify(tooted);
+            // localStorage.setItem("tooted", tooted);
         }
     }
 
