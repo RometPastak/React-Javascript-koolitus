@@ -6,6 +6,9 @@ function LisaToode() {
     //alati kui teen refi, panen ta kuhugi input sisse
     //ja alati kui teen inputi, panen Reactis talle ref sisse
     const nimiRef = useRef();
+    const hindRef = useRef();
+    const piltRef = useRef();
+    const aktiivsusRef = useRef();
 
     //function lisaUusToode() on sama asi, mis alumine const
     const lisaUusToode = () => {
@@ -14,9 +17,21 @@ function LisaToode() {
         }
         else {
             muudaSonum("Lisasid uue toote " + nimiRef.current.value);
-            const tootedLS = JSON.parse(localStorage.getItem("tooted")) || [];
-            tootedLS.push(nimiRef.current.value);
-            localStorage.setItem("tooted", JSON.stringify(tootedLS));
+            let tootedLS = localStorage.getItem("tooted");
+            tootedLS = JSON.parse(tootedLS) || [];
+            
+            // const tootedLS = JSON.parse(localStorage.getItem("tooted")) || [];
+
+            const uusToode = {
+                "nimi": nimiRef.current.value,
+                "hind": hindRef.current.value,
+                "pilt": piltRef.current.value,
+                "aktiivne": aktiivsusRef.current.value
+            }
+
+            tootedLS.push(uusToode);
+            tootedLS = JSON.stringify(tootedLS);
+            localStorage.setItem("tooted", tootedLS);
 
             // let tooted = localStorage.getItem("tooted");
             // tooted = JSON.parse(tooted) || [];
@@ -28,8 +43,18 @@ function LisaToode() {
 
     return ( 
         <div>
+            <div>{sonum}</div>
             <label>Toote nimi</label><br />
-            <input ref={nimiRef} type="text" /><br />
+            <input ref={nimiRef} type="text" />
+            <br />
+            <label>Toote hind</label><br />
+            <input ref={hindRef} type="text" />
+            <br />
+            <label>Toote pilt</label><br />
+            <input ref={piltRef} type="text" />
+            <br />
+            <label>Toote aktiivsus</label><br />
+            <input ref={aktiivsusRef} type="text" /><br />
             <button onClick={lisaUusToode}>Vajuta</button>
             <div>{sonum}</div>
         </div>
