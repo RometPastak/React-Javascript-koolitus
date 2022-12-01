@@ -7,9 +7,9 @@ function YksikToode() {
 
     return ( 
         <div>
-            <div>{tooted}</div>
-            <div>{urlParameetrid.jrknumber}</div>
-            <div>{leitudToode}</div>
+            <img src={leitudToode.pilt} width="200px" alt="" />
+            <div>{leitudToode.nimi}</div>
+            <div>{leitudToode.hind}€</div>
         </div>
     );
 }
