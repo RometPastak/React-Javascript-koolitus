@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 function Product() {
     const { id } = useParams();
     const productClicked = productsFromFile.find(element => element.id === Number(id));
-    const index = productsFromFile.indexOf(productClicked);
     const { t } = useTranslation();
 
     return ( 
